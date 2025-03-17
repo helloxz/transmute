@@ -296,6 +296,12 @@
                         if (!response.ok) {
                             throw new Error('网络响应错误');
                         }
+                        // 如果状态码是500
+                        if (response.status === 500) {
+                            this.$message.error('服务器错误，请稍后再试');
+                            this.isLoading = false;
+                            return;
+                        }
                         const contentType = response.headers.get('Content-Type');
                         if (contentType && contentType.includes('application/json')) {
                             response.json()
