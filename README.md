@@ -101,12 +101,18 @@ Transmute配置文件位于挂载目录下的`config/config.json`，使用标准
 
 1. 参数修改完毕后请务必校验json格式正确，否则可能导致程序异常
 2. 修改参数后需要重启容器`docker restart transmute`才会生效
+3. 然后访问`http://IP:2082`测试
 
 **其他参数**
 
 * `app.req_limit`：单个访客请求频率限制，单位为24H，超出请求频率后将被限制
 * `app.word_limit`：最大可输入的字符串长度
 * `site`：站点相关的信息
+
+### 快捷键
+
+* 支持`Ctrl + Enter` 或 `Command + Enter`提交翻译
+* 支持 `ESC` 清空输入内容和结果
 
 ## 问题反馈
 
