@@ -18,6 +18,7 @@ install_python_deps(){
 
 # 清理缓存，缩小镜像体积
 clean(){
+    apk del py3-pip
     rm -rf /var/cache/apk/*
     rm -rf /root/.cache
     #rm -rf /opt/transmute/venv
