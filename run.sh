@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 # 复制配置文件
 copyConfig(){
     # 检查app/config/config.json文件是否存在
@@ -8,6 +9,18 @@ copyConfig(){
         mkdir -p app/data/config
         # 复制配置文件
         cp app/config/config.default.json app/config/config.json
+    fi
+}
+
+# 启动redis
+runRedis(){
+    redis-server app/config/redis.conf --daemonize yes
+    # 检查 Redis 是否启动成功
+    if [ $? -eq 0 ]; then
+        echo "Redis started successfully."
+    else
+        echo "Failed to start Redis."
+        exit 1
     fi
 }
 
@@ -20,8 +33,7 @@ runMain(){
         WORKERS=1
     fi
     # 启动主进程
-    uvicorn app.main:app --workers $WORKERS --host
+    uvicorn app.main:app --workers 2 --host 0.0.0.0 --port 2082
 }
 
-copyConfig
-uvicorn app.main:app --workers 2 --host 0.0.0.0 --port 2082
+copyConfig && runRedis && runMain
