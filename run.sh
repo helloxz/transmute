@@ -33,7 +33,7 @@ runMain(){
         WORKERS=1
     fi
     # 启动主进程
-    uvicorn app.main:app --workers 2 --host 0.0.0.0 --port 2082
+    uvicorn app.main:app --workers ${WORKERS} --host 0.0.0.0 --port 2082
 }
 
 copyConfig && runRedis && runMain
