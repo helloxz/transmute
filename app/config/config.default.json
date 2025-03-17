@@ -1,0 +1,26 @@
+{
+    "redis":{
+        "host":"127.0.0.1",
+        "port":6379,
+        "password":"transmute2082",
+        "db":0
+    },
+    "app":{
+        "req_limit":100,
+        "word_limit":3000
+    },
+    "site":{
+        "title":"Transmute",
+        "keywords":"Transmute,北冥翻译,智能翻译,AI翻译,翻译,翻译工具,翻译软件,翻译器,翻译网站",
+        "description":"Transmute是一款基于人工智能的翻译工具，支持多种语言互译，提供多种翻译模型。",
+        "sub_title":"AI大模型驱动的智能翻译工具"
+    },
+    "models":[
+        {
+            "base_url":"https://api.openai.com/v1",
+            "model":"gpt-4o",
+            "api_key":"sk-xxx",
+            "name":"GPT-4o"
+        }
+    ]
+}
