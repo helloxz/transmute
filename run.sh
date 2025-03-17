@@ -8,7 +8,7 @@ copyConfig(){
         # 递归创建目录
         mkdir -p app/data/config
         # 复制配置文件
-        cp app/config/config.default.json app/config/config.json
+        cp app/config/config.default.json app/data/config/config.json
     fi
 }
 
