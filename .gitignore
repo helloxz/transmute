@@ -2,3 +2,4 @@ __pycache__
 venv
 app/data/*
 testrun.sh
+depends.sh

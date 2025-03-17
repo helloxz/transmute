@@ -1,10 +1,7 @@
 name: Build and Push Docker Image
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  workflow_dispatch:    # 只保留手动触发的方式
 
 jobs:
   build:
