@@ -30,7 +30,7 @@ async def req_limit(request: Request, call_next):
                 # 返回请求频率过快的错误信息
                 # 返回请求频率过快的错误信息
                 response_data = show_json(429, "Too Many Requests", None)
-                return JSONResponse(status_code=429, content=response_data)
+                return JSONResponse(status_code=200, content=response_data)
             else:
                 res = await call_next(request)
                 return res
