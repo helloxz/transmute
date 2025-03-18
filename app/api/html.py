@@ -10,8 +10,9 @@ class Html:
 
     async def index(self,request: Request):
         templates = Jinja2Templates(directory="app/templates")
+        template_name = request.app.state.config["app"].get("template_name", "index.html")
         # 获取站点信息
         siteInfo = request.app.state.config["site"]
         return templates.TemplateResponse(
-            request=request, name="index.html",context={"siteInfo": siteInfo}
+            request=request, name=template_name,context={"siteInfo": siteInfo}
         )

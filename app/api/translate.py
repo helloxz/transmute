@@ -215,7 +215,7 @@ class Translate:
         if model == "auto":
             # 直接使用第一个模型
             return self.modelList[0]
-        
+            
         # 模型不为空，遍历模型列表
         for modelInfo in self.modelList:
             if modelInfo["model"] == model:
